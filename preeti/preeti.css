@@ -1,0 +1,11 @@
+@font-face {
+    font-family:"Preeti";
+    src:
+        local("Preeti"),
+        url("PREETI.eot?") format("eot"),
+        url("PREETI.woff") format("woff"),
+        url("PREETI.ttf") format("truetype"),
+        url("PREETI.svg#Preeti") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}

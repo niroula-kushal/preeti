@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="preeti/preeti.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            padding-top: 1px;
+        }
+        textarea {
+            font-family: "Preeti";
+            font-size: 2em;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .p-10 {
+            padding: 5px;
+        }
+        .p-20 {
+            padding: 10px;
+        }
+        .m-10 {
+            margin : 10px;
+        }
+        .sticky {
+            position: sticky;
+            bottom: 10px;
+        }
+        .bg-gray {
+            background-color: #8a988d;
+        }
+        .text-white {
+            color: white;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex {
+            display: flex;
+            width: 100%;
+        }
+        .flex > * {
+            width: 50%;
+            margin: 10px;
+        }
+        .resize-vertical {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="text-center">
+        Preeti Input
+    </h3>
+    <div class="flex">
+        <div>
+            <h4 class="text-center">Type Here</h4>
+            <textarea id="typehere" rows="10" class="w-full p-10 resize-vertical"></textarea>
+        </div>
+        <div>
+            <h4 class="text-center">Display</h4>
+            <textarea id="shadow" rows="10" class="w-full p-10 bg-gray text-white resize-vertical" readonly></textarea>
+        </div>
+    </div>
+    <div class="text-center m-10">
+        <a href="https://thecoffeecoders.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://thecoffeecoders.com/wp-content/themes/tcc-official/img/coffee-coders-logo.png" alt="">
+        </a>
+    </div>
+    <footer class="text-center sticky w-full p-20 bg-gray" style="top: 90%"> 
+        Powered by <a href="https://thecoffeecoders.com" target="_blank" rel="noopener noreferrer"
+            style="font-size: 1.5em;"
+        >@thecoffeecoders</a>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', e => {
+            const typehere_elm = document.querySelector("#typehere");
+            const shadow_elm = document.querySelector('#shadow');
+            typehere_elm.addEventListener('input', () => {
+                shadow_elm.value = typehere_elm.value;
+                auto_resize_textarea(typehere_elm);
+                auto_resize_textarea(shadow_elm);
+            });
+            function auto_resize_textarea(elm) {
+                elm.style.height = "auto";
+                elm.style.height = elm.scrollHeight + "px";
+            }
+        });
+    </script>
+</body>
+</html>
