@@ -1,6 +1,9 @@
 ## Preeti Input
 
 A simple way to allow users to use preeti font for input purpose.
+
+Demo : https://rehmatfalcon.github.io/preeti/
+
 ```
 The idea is very simple:
 1. Load local preety font if available. If local font is not available, download and load the preeti font from server.
